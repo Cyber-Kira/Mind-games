@@ -1,9 +1,10 @@
 ---
 
 plugins:
-  - babel
+  - eslint
   - eslint-plugin-import
   - eslint-plugin-babel
+  - eslint-config-airbnb-base
 
 env:
   node: true
