@@ -18,20 +18,29 @@ const getRngNumber = (max) => Math.floor(Math.random() * Math.floor(max));
 
 const isEvenInt = (int) => ((int % 2 === 0) ? 'yes' : 'no');
 
+const isUserAnswerCorrect = (userAnswer, correctAnswer) => {
+  if (userAnswer === correctAnswer) {
+    console.log('Correct!');
+    return true;
+  }
+  console.log(`'${userAnswer}' is wrong answer ;(. Correct answer was '${correctAnswer}'.`);
+  return false;
+};
+
 export const gameEven = (userName) => {
-  for (let counter = 0; counter < 3; counter += 1) {
+  let counter = 0;
+  while (counter < 3) {
     const rngNumber = getRngNumber(50);
+    const correctAnswer = isEvenInt(rngNumber);
     console.log(`Question: ${rngNumber}`);
     const userAnswer = readLineSync.question('Your answer: ');
-    const correctAnswer = isEvenInt(rngNumber);
-    if (userAnswer === correctAnswer) {
-      console.log('Correct!');
+    if (isUserAnswerCorrect(userAnswer, correctAnswer)) {
+      counter += 1;
     } else {
-      console.log(`'${userAnswer}' is wrong answer ;(. Correct answer was '${correctAnswer}'.`);
       break;
     }
-    if (counter === 2) {
-      console.log(`Congratulations, ${userName}!`);
-    }
+  }
+  if (counter === 3) {
+    console.log(`Congratulations, ${userName}!`);
   }
 };
