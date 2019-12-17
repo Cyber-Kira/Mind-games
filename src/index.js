@@ -16,24 +16,22 @@ export const descrForGameEven = () => {
 
 const getRngNumber = (max) => Math.floor(Math.random() * Math.floor(max));
 
-const isEvenInt = (int) => {
-  const isEven = int % 2 === 0;
-  return (isEven) ? 'yes' : 'no';
-};
-
-const isCorrectAnswer = (userAnswer, rngNumber) => (userAnswer === isEvenInt(rngNumber));
+const isEvenInt = (int) => ((int % 2 === 0) ? 'yes' : 'no');
 
 export const gameEven = (userName) => {
   for (let counter = 0; counter < 3; counter += 1) {
     const rngNumber = getRngNumber(50);
     console.log(`Question: ${rngNumber}`);
     const userAnswer = readLineSync.question('Your answer: ');
-    if (isCorrectAnswer(userAnswer, rngNumber)) {
+    const correctAnswer = isEvenInt(rngNumber);
+    if (userAnswer === correctAnswer) {
       console.log('Correct!');
     } else {
-      console.log(`'${userAnswer}' is wrong answer ;(. Correct answer was '${isEvenInt(userAnswer)}'.`);
+      console.log(`'${userAnswer}' is wrong answer ;(. Correct answer was '${correctAnswer}'.`);
       break;
     }
+    if (counter === 2) {
+      console.log(`Congratulations, ${userName}!`);
+    }
   }
-  console.log(`Congratulations, ${userName}!`);
 };
