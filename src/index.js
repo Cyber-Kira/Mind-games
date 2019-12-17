@@ -15,27 +15,18 @@ export const descrForGameEven = () => {
 };
 
 export const gameEven = (userName) => {
-  let counter = 0;
-  let correctAnswer;
-  while (counter < 3) {
+  for (let counter = 0; counter < 3; counter += 1) {
     const rndNumber = Math.floor(Math.random() * 50);
     console.log(`Question: ${rndNumber}`);
-    const answer = readLineSync.question('Your answer: ');
+    const userAnswer = readLineSync.question('Your answer: ');
     const isEven = rndNumber % 2 === 0;
-    if (isEven) {
-      correctAnswer = 'yes';
-    } else {
-      correctAnswer = 'no';
-    }
-    if ((answer === 'yes' && isEven) || (answer === 'no' && isEven === false)) {
+    const correctAnswer = (isEven) ? 'yes' : 'no';
+    if ((userAnswer === 'yes' && isEven) || (userAnswer === 'no' && isEven === false)) {
       console.log('Correct!');
-      counter += 1;
     } else {
-      console.log(`'${answer}' is wrong answer ;(. Correct answer was '${correctAnswer}'.`);
+      console.log(`'${userAnswer}' is wrong answer ;(. Correct answer was '${correctAnswer}'.`);
       break;
     }
   }
-  if (counter === 3) {
-    console.log(`Congratulations, ${userName}!`);
-  }
+  console.log(`Congratulations, ${userName}!`);
 };
