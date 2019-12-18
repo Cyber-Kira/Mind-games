@@ -1,8 +1,13 @@
 #!/usr/bin/env node
 
-import * as game from '..';
+import {
+  greetings,
+  descrForGameEven,
+  askingName,
+  gameEven,
+} from '..';
 
-game.greetings();
-game.descrForGameEven();
-const userName = game.askingName();
-game.gameEven(userName);
+greetings();
+descrForGameEven();
+const userName = askingName();
+gameEven(userName);
