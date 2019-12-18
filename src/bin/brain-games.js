@@ -1,6 +1,9 @@
 #!/usr/bin/env node
 
-import * as game from '..';
+import {
+  greetings,
+  askingName,
+} from '..';
 
-game.greetings();
-game.askingName();
+greetings();
+askingName();
