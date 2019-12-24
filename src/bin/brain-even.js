@@ -3,11 +3,11 @@
 import {
   greetings,
   descrForGameEven,
-  askingName,
+  getName,
   gameEven,
 } from '..';
 
 greetings();
 descrForGameEven();
-const userName = askingName();
+const userName = getName();
 gameEven(userName);
