@@ -30,6 +30,7 @@ const getRngSymbol = () => {
   return syblols[getRngInt(3)];
 };
 
+
 const getRngOperation = (rngSymbol, rngNum1, rngNum2) => {
   switch (rngSymbol) {
     case '+':
@@ -41,6 +42,13 @@ const getRngOperation = (rngSymbol, rngNum1, rngNum2) => {
     default:
       return 'Not a number';
   }
+};
+
+const getGCD = (num1, num2) => {
+  if (num2 !== 0) {
+    return getGCD(num2, num1 % num2);
+  }
+  return num1;
 };
 
 const isIntEven = (int) => ((int % 2 === 0) ? 'yes' : 'no');
@@ -76,12 +84,31 @@ export const gameEven = (userName) => {
 export const gameCalc = (userName) => {
   let counter = 0;
   while (counter < 3) {
-    const rngNums = cons(getRngInt(30), getRngInt(30));
+    const rngNums = cons(getRngInt(10), getRngInt(10));
     const rngSym = getRngSymbol();
-    const rngExpression = (`${Number(car(rngNums))} ${rngSym} ${Number(cdr(rngNums))}`);
+    const rngExpression = (`${car(rngNums)} ${rngSym} ${cdr(rngNums)}`);
     console.log(`Question: ${rngExpression}`);
     const userAnswer = readLineSync.question('Your answer: ');
     const correctAnswer = getRngOperation(rngSym, car(rngNums), cdr(rngNums));
+    if (isUserAnswerCorrect(userName, userAnswer, correctAnswer)) {
+      counter += 1;
+    } else {
+      break;
+    }
+  }
+  if (counter === 3) {
+    console.log(`Congratulations, ${userName}!`);
+  }
+};
+
+export const gameGCD = (userName) => {
+  let counter = 0;
+  while (counter < 3) {
+    const rngNums = cons(getRngInt(50), getRngInt(10));
+    const rngExpression = (`${car(rngNums)} ${cdr(rngNums)}`);
+    console.log(`Question: ${rngExpression}`);
+    const userAnswer = readLineSync.question('Your answer: ');
+    const correctAnswer = getGCD(car(rngNums), cdr(rngNums));
     if (isUserAnswerCorrect(userName, userAnswer, correctAnswer)) {
       counter += 1;
     } else {
