@@ -2,12 +2,12 @@
 
 import {
   greetings,
-  descrForGameEven,
+  descrForGameCalc,
   getName,
   gameCalc,
 } from '..';
 
 greetings();
-descrForGameEven();
+descrForGameCalc();
 const userName = getName();
 gameCalc(userName);
