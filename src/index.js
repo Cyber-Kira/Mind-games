@@ -19,6 +19,10 @@ export const descrForGameEven = () => {
   console.log('Answer "yes" if the number is even, otherwise answer "no".\n');
 };
 
+export const descrForGameCalc = () => {
+  console.log('What is the result of the expression?.\n');
+};
+
 const getRngInt = (max) => Math.floor(Math.random() * Math.floor(max));
 
 const getRngSymbol = () => {
