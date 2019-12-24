@@ -2,8 +2,8 @@
 
 import {
   greetings,
-  askingName,
+  getName,
 } from '..';
 
 greetings();
-askingName();
+getName();
