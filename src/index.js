@@ -63,7 +63,7 @@ const getGCD = (num1, num2) => {
   return num1;
 };
 
-const isIntEven = (int) => ((int % 2 === 0) ? 'yes' : 'no');
+const isEven = (int) => ((int % 2 === 0) ? 'yes' : 'no');
 
 const isPrime = (number) => {
   if (number === 2) {
@@ -96,7 +96,7 @@ export const gameEven = (userName) => {
     const rngNum = getRngInt(0, 50);
     console.log(`Question: ${rngNum}`);
     const userAnswer = readLineSync.question('Your answer: ');
-    const correctAnswer = isIntEven(rngNum);
+    const correctAnswer = isEven(rngNum);
     if (isUserAnswerCorrect(userName, userAnswer, correctAnswer)) {
       counter += 1;
     } else {
@@ -188,10 +188,10 @@ export const gameProgression = (userName) => {
 export const gamePrime = (userName) => {
   let counter = 0;
   while (counter < 3) {
-    const RngNumber = getRngInt(1, 50);
-    console.log(`Question: ${RngNumber}`);
+    const rngNumber = getRngInt(1, 100);
+    console.log(`Question: ${rngNumber}`);
     const userAnswer = readLineSync.question('Your answer: ');
-    const correctAnswer = isPrime(RngNumber);
+    const correctAnswer = isPrime(rngNumber);
     if (isUserAnswerCorrect(userName, userAnswer, correctAnswer)) {
       counter += 1;
     } else {
