@@ -4,12 +4,12 @@
 
 # Installation and Usage
 ## Game Even
-[![asciicast](https://asciinema.org/a/sDZkSLWByx33TTqHKdTCxXaGg.svg)](https://asciinema.org/a/sDZkSLWByx33TTqHKdTCxXaGg)
+[![asciicast](https://asciinema.org/a/Rk5PmTnzWUgzhoEDTkNh3PYQu.svg)](https://asciinema.org/a/Rk5PmTnzWUgzhoEDTkNh3PYQu)
 ## Game Calc
-[![asciicast](https://asciinema.org/a/ioZGaUMNQxdhOd0rnGwcK1rFj.svg)](https://asciinema.org/a/ioZGaUMNQxdhOd0rnGwcK1rFj)
+[![asciicast](https://asciinema.org/a/qm0eHAUj4rpL5xeT9HBPnnPGp.svg)](https://asciinema.org/a/qm0eHAUj4rpL5xeT9HBPnnPGp)
 ## Game GCD
-[![asciicast](https://asciinema.org/a/VsCQ0MUH5O9WeuBNnw2DnY01h.svg)](https://asciinema.org/a/VsCQ0MUH5O9WeuBNnw2DnY01h)
+[![asciicast](https://asciinema.org/a/uh9f1YyDbHRlo8kBlj1RtJTdS.svg)](https://asciinema.org/a/uh9f1YyDbHRlo8kBlj1RtJTdS)
 ## Game Progression
-[![asciicast](https://asciinema.org/a/291622.svg)](https://asciinema.org/a/291622)
+[![asciicast](https://asciinema.org/a/5swbPG7KTuycvqIV6u3Z3KtT1.svg)](https://asciinema.org/a/5swbPG7KTuycvqIV6u3Z3KtT1)
 ## Game Prime
-[![asciicast](https://asciinema.org/a/291630.svg)](https://asciinema.org/a/291630)
+[![asciicast](https://asciinema.org/a/zoC3MFP42GvMDcR0r8gPST9sR.svg)](https://asciinema.org/a/zoC3MFP42GvMDcR0r8gPST9sR)
