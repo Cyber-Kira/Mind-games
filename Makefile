@@ -12,5 +12,6 @@ link:
 
 lint:
 	npx eslint .
+	
 asc:
 	asciinema rec
