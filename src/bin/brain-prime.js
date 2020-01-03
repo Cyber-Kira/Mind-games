@@ -4,7 +4,6 @@ import {
   greetings,
   descrForGamePrime,
   getName,
-  gameGCD,
   gamePrime,
 } from '..';
 
