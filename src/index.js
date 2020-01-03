@@ -31,6 +31,10 @@ export const descrForGameProgression = () => {
   console.log('What number is missing in the progression?\n');
 };
 
+export const descrForGamePrime = () => {
+  console.log('Answer "yes" if given number is prime. Otherwise answer "no".\n');
+};
+
 const getRngInt = (min, max) => Math.floor(Math.random() * (max - min) + min);
 
 const getRngSymbol = () => {
@@ -60,6 +64,21 @@ const getGCD = (num1, num2) => {
 };
 
 const isIntEven = (int) => ((int % 2 === 0) ? 'yes' : 'no');
+
+const isPrime = (number) => {
+  if (number === 2) {
+    return 'yes';
+  }
+  const limitNum = Math.floor(Math.sqrt(number));
+  let index = 2;
+  while (index <= limitNum) {
+    if (number % index === 0) {
+      return 'no';
+    }
+    index += 1;
+  }
+  return 'yes';
+};
 
 const isUserAnswerCorrect = (userName, userAnswer, correctAnswer) => {
   if (String(userAnswer) === String(correctAnswer)) {
@@ -155,6 +174,24 @@ export const gameProgression = (userName) => {
     console.log(`Question: ${progression}`);
     const userAnswer = readLineSync.question('Your answer: ');
     const correctAnswer = hiddenElem;
+    if (isUserAnswerCorrect(userName, userAnswer, correctAnswer)) {
+      counter += 1;
+    } else {
+      break;
+    }
+  }
+  if (counter === 3) {
+    console.log(`Congratulations, ${userName}!`);
+  }
+};
+
+export const gamePrime = (userName) => {
+  let counter = 0;
+  while (counter < 3) {
+    const RngNumber = getRngInt(1, 50);
+    console.log(`Question: ${RngNumber}`);
+    const userAnswer = readLineSync.question('Your answer: ');
+    const correctAnswer = isPrime(RngNumber);
     if (isUserAnswerCorrect(userName, userAnswer, correctAnswer)) {
       counter += 1;
     } else {
