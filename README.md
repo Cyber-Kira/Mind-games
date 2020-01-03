@@ -9,3 +9,5 @@
 [![asciicast](https://asciinema.org/a/ioZGaUMNQxdhOd0rnGwcK1rFj.svg)](https://asciinema.org/a/ioZGaUMNQxdhOd0rnGwcK1rFj)
 ## Game GCD
 [![asciicast](https://asciinema.org/a/VsCQ0MUH5O9WeuBNnw2DnY01h.svg)](https://asciinema.org/a/VsCQ0MUH5O9WeuBNnw2DnY01h)
+## Game Progression
+[![asciicast](https://asciinema.org/a/291622.svg)](https://asciinema.org/a/291622)
