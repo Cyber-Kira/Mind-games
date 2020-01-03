@@ -20,14 +20,22 @@ export const descrForGameEven = () => {
 };
 
 export const descrForGameCalc = () => {
-  console.log('What is the result of the expression?.\n');
+  console.log('What is the result of the expression?\n');
 };
 
-const getRngInt = (max) => Math.floor(Math.random() * Math.floor(max));
+export const descrForGameGCD = () => {
+  console.log('Find the greatest common divisor of given numbers.\n');
+};
+
+export const descrForGameProgression = () => {
+  console.log('What number is missing in the progression?\n');
+};
+
+const getRngInt = (min, max) => Math.floor(Math.random() * (max - min) + min);
 
 const getRngSymbol = () => {
   const syblols = '+-*';
-  return syblols[getRngInt(3)];
+  return syblols[getRngInt(0, 3)];
 };
 
 
@@ -66,7 +74,7 @@ const isUserAnswerCorrect = (userName, userAnswer, correctAnswer) => {
 export const gameEven = (userName) => {
   let counter = 0;
   while (counter < 3) {
-    const rngNum = getRngInt(50);
+    const rngNum = getRngInt(0, 50);
     console.log(`Question: ${rngNum}`);
     const userAnswer = readLineSync.question('Your answer: ');
     const correctAnswer = isIntEven(rngNum);
@@ -84,7 +92,7 @@ export const gameEven = (userName) => {
 export const gameCalc = (userName) => {
   let counter = 0;
   while (counter < 3) {
-    const rngNums = cons(getRngInt(10), getRngInt(10));
+    const rngNums = cons(getRngInt(0, 10), getRngInt(0, 10));
     const rngSym = getRngSymbol();
     const rngExpression = (`${car(rngNums)} ${rngSym} ${cdr(rngNums)}`);
     console.log(`Question: ${rngExpression}`);
@@ -104,11 +112,41 @@ export const gameCalc = (userName) => {
 export const gameGCD = (userName) => {
   let counter = 0;
   while (counter < 3) {
-    const rngNums = cons(getRngInt(50), getRngInt(10));
+    const rngNums = cons(getRngInt(0, 50), getRngInt(0, 10));
     const rngExpression = (`${car(rngNums)} ${cdr(rngNums)}`);
     console.log(`Question: ${rngExpression}`);
     const userAnswer = readLineSync.question('Your answer: ');
     const correctAnswer = getGCD(car(rngNums), cdr(rngNums));
+    if (isUserAnswerCorrect(userName, userAnswer, correctAnswer)) {
+      counter += 1;
+    } else {
+      break;
+    }
+  }
+  if (counter === 3) {
+    console.log(`Congratulations, ${userName}!`);
+  }
+};
+
+export const gameProgression = (userName) => {
+  let counter = 0;
+  while (counter < 3) {
+    let hiddenElem = '';
+    let progression = '';
+    let numOfProgression = getRngInt(0, 10);
+    const step = getRngInt(1, 4);
+    const indexOfHiddenElem = getRngInt(0, 10);
+    for (let i = 0; i < 10; i += 1, numOfProgression += step) {
+      if (indexOfHiddenElem === i) {
+        hiddenElem = numOfProgression;
+        progression += '.. ';
+      } else {
+        progression += `${String(numOfProgression)} `;
+      }
+    }
+    console.log(`Question: ${progression}`);
+    const userAnswer = readLineSync.question('Your answer: ');
+    const correctAnswer = hiddenElem;
     if (isUserAnswerCorrect(userName, userAnswer, correctAnswer)) {
       counter += 1;
     } else {
