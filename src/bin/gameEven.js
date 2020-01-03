@@ -10,19 +10,19 @@ export const descrForGameEven = () => {
 const isEven = (int) => ((int % 2 === 0) ? 'yes' : 'no');
 
 export const gameEven = (userName) => {
-  let counter = 0;
-  while (counter < 3) {
+  let currentRound = 0;
+  while (currentRound < 3) {
     const rngNum = getRngInt(0, 50);
     console.log(`Question: ${rngNum}`);
     const userAnswer = readLineSync.question('Your answer: ');
     const correctAnswer = isEven(rngNum);
     if (isUserAnswerCorrect(userName, userAnswer, correctAnswer)) {
-      counter += 1;
+      currentRound += 1;
     } else {
       break;
     }
   }
-  if (counter === 3) {
+  if (currentRound === 3) {
     console.log(`Congratulations, ${userName}!`);
   }
 };

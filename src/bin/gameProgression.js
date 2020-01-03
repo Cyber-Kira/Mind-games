@@ -32,8 +32,8 @@ const getProgression = () => {
 };
 
 export const gameProgression = (userName) => {
-  let counter = 0;
-  while (counter < 3) {
+  let currentRound = 0;
+  while (currentRound < 3) {
     const progressionPair = getProgression();
     const progression = car(progressionPair);
     const hiddenElem = cdr(progressionPair);
@@ -41,12 +41,12 @@ export const gameProgression = (userName) => {
     const userAnswer = readLineSync.question('Your answer: ');
     const correctAnswer = hiddenElem;
     if (isUserAnswerCorrect(userName, userAnswer, correctAnswer)) {
-      counter += 1;
+      currentRound += 1;
     } else {
       break;
     }
   }
-  if (counter === 3) {
+  if (currentRound === 3) {
     console.log(`Congratulations, ${userName}!`);
   }
 };

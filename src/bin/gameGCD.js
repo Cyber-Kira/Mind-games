@@ -20,20 +20,20 @@ export const getGCD = (num1, num2) => {
 };
 
 export const gameGCD = (userName) => {
-  let counter = 0;
-  while (counter < 3) {
+  let currentRound = 0;
+  while (currentRound < 3) {
     const rngNums = cons(getRngInt(0, 50), getRngInt(0, 10));
     const rngExpression = (`${car(rngNums)} ${cdr(rngNums)}`);
     console.log(`Question: ${rngExpression}`);
     const userAnswer = readLineSync.question('Your answer: ');
     const correctAnswer = getGCD(car(rngNums), cdr(rngNums));
     if (isUserAnswerCorrect(userName, userAnswer, correctAnswer)) {
-      counter += 1;
+      currentRound += 1;
     } else {
       break;
     }
   }
-  if (counter === 3) {
+  if (currentRound === 3) {
     console.log(`Congratulations, ${userName}!`);
   }
 };

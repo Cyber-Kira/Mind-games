@@ -23,19 +23,19 @@ export const descrForGamePrime = () => {
 };
 
 export const gamePrime = (userName) => {
-  let counter = 0;
-  while (counter < 3) {
+  let currentRound = 0;
+  while (currentRound < 3) {
     const rngNumber = getRngInt(1, 100);
     console.log(`Question: ${rngNumber}`);
     const userAnswer = readLineSync.question('Your answer: ');
     const correctAnswer = isPrime(rngNumber);
     if (isUserAnswerCorrect(userName, userAnswer, correctAnswer)) {
-      counter += 1;
+      currentRound += 1;
     } else {
       break;
     }
   }
-  if (counter === 3) {
+  if (currentRound === 3) {
     console.log(`Congratulations, ${userName}!`);
   }
 };
