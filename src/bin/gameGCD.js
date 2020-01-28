@@ -1,12 +1,9 @@
-#!/usr/bin/env node
-
-import readLineSync from 'readline-sync';
 import {
   cons,
   car,
   cdr,
 } from '@hexlet/pairs';
-import { getRngInt, isUserAnswerCorrect } from '..';
+import { getRngInt, startGame } from '..';
 
 export const descrForGameGCD = () => {
   console.log('Find the greatest common divisor of given numbers.\n');
@@ -19,21 +16,13 @@ export const getGCD = (num1, num2) => {
   return num1;
 };
 
-export const gameGCD = (userName) => {
-  let currentRound = 0;
-  while (currentRound < 3) {
-    const rngNums = cons(getRngInt(0, 50), getRngInt(0, 10));
-    const rngExpression = (`${car(rngNums)} ${cdr(rngNums)}`);
-    console.log(`Question: ${rngExpression}`);
-    const userAnswer = readLineSync.question('Your answer: ');
-    const correctAnswer = getGCD(car(rngNums), cdr(rngNums));
-    if (isUserAnswerCorrect(userName, userAnswer, correctAnswer)) {
-      currentRound += 1;
-    } else {
-      break;
-    }
-  }
-  if (currentRound === 3) {
-    console.log(`Congratulations, ${userName}!`);
-  }
+export const gameData = () => {
+  const rngNums = cons(getRngInt(0, 50), getRngInt(0, 10));
+  const rngExpression = (`${car(rngNums)} ${cdr(rngNums)}`);
+  const correctAnswer = getGCD(car(rngNums), cdr(rngNums));
+  return cons(rngExpression, correctAnswer);
+};
+
+export default () => {
+  startGame(gameData, descrForGameGCD);
 };

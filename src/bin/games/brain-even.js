@@ -1,6 +1,5 @@
 #!/usr/bin/env node
 
-import { startGame } from '../../index';
-import { descrForGameEven, gameEven } from '../gameEven';
+import gameEven from '../gameCalc';
 
-startGame(gameEven, descrForGameEven);
+gameEven();

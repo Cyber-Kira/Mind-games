@@ -1,15 +1,12 @@
-#!/usr/bin/env node
-
-import readLineSync from 'readline-sync';
 import {
   cons,
   car,
   cdr,
 } from '@hexlet/pairs';
-import { getRngInt, isUserAnswerCorrect } from '..';
+import { getRngInt, startGame } from '..';
 
 
-export const descrForGameProgression = () => {
+const descrForGameProgression = () => {
   console.log('What number is missing in the progression?\n');
 };
 
@@ -31,22 +28,14 @@ const getProgression = () => {
   return pair;
 };
 
-export const gameProgression = (userName) => {
-  let currentRound = 0;
-  while (currentRound < 3) {
-    const progressionPair = getProgression();
-    const progression = car(progressionPair);
-    const hiddenElem = cdr(progressionPair);
-    console.log(`Question: ${progression}`);
-    const userAnswer = readLineSync.question('Your answer: ');
-    const correctAnswer = hiddenElem;
-    if (isUserAnswerCorrect(userName, userAnswer, correctAnswer)) {
-      currentRound += 1;
-    } else {
-      break;
-    }
-  }
-  if (currentRound === 3) {
-    console.log(`Congratulations, ${userName}!`);
-  }
+const gameData = () => {
+  const progressionPair = getProgression();
+  const progression = car(progressionPair);
+  const hiddenElem = cdr(progressionPair);
+  const correctAnswer = hiddenElem;
+  return cons(progression, correctAnswer);
+};
+
+export default () => {
+  startGame(gameData, descrForGameProgression);
 };

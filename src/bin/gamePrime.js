@@ -1,7 +1,5 @@
-#!/usr/bin/env node
-
-import readLineSync from 'readline-sync';
-import { getRngInt, isUserAnswerCorrect } from '..';
+import { cons } from '@hexlet/pairs';
+import { getRngInt, startGame } from '..';
 
 const isPrime = (number) => {
   if (number === 2) {
@@ -22,20 +20,12 @@ export const descrForGamePrime = () => {
   console.log('Answer "yes" if given number is prime. Otherwise answer "no".\n');
 };
 
-export const gamePrime = (userName) => {
-  let currentRound = 0;
-  while (currentRound < 3) {
-    const rngNumber = getRngInt(1, 100);
-    console.log(`Question: ${rngNumber}`);
-    const userAnswer = readLineSync.question('Your answer: ');
-    const correctAnswer = isPrime(rngNumber);
-    if (isUserAnswerCorrect(userName, userAnswer, correctAnswer)) {
-      currentRound += 1;
-    } else {
-      break;
-    }
-  }
-  if (currentRound === 3) {
-    console.log(`Congratulations, ${userName}!`);
-  }
+export const gameData = () => {
+  const rngNumber = getRngInt(1, 100);
+  const correctAnswer = isPrime(rngNumber);
+  return cons(rngNumber, correctAnswer);
+};
+
+export default () => {
+  startGame(gameData, descrForGamePrime);
 };
