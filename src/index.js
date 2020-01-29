@@ -6,12 +6,6 @@ import {
 
 const greetings = () => console.log('Welcome to the Brain Games!');
 
-const getName = () => {
-  const userName = readLineSync.question('May I have your name? ');
-  console.log(`Hello, ${userName}!\n`);
-  return userName;
-};
-
 const isUserAnswerCorrect = (userName, userAnswer, correctAnswer) => {
   if (String(userAnswer) === String(correctAnswer)) {
     console.log('Correct!');
@@ -25,13 +19,12 @@ const isUserAnswerCorrect = (userName, userAnswer, correctAnswer) => {
 export const getRngInt = (min, max) => Math.floor(Math.random() * (max - min) + min);
 
 export const startGame = (gameData, descr) => {
-  let currentRound = 0;
-  const lastRound = 3;
   greetings();
-  const userName = getName();
-  descr();
+  const userName = readLineSync.question('May I have your name? ');
+  console.log(`Hello, ${userName}!\n`);
+  console.log(descr);
 
-  while (currentRound < lastRound) {
+  for (let currentRound = 0, lastRound = 3; currentRound < lastRound;) {
     const gameQandA = gameData();
     const gameQuestion = car(gameQandA);
     const gameAnswer = cdr(gameQandA);
@@ -40,10 +33,8 @@ export const startGame = (gameData, descr) => {
     if (isUserAnswerCorrect(userName, userAnswer, gameAnswer)) {
       currentRound += 1;
     } else {
-      break;
+      return;
     }
   }
-  if (currentRound === lastRound) {
-    console.log(`Congratulations, ${userName}!`);
-  }
+  console.log(`Congratulations, ${userName}!`);
 };
