@@ -14,24 +14,23 @@ To install this project you need:
 *   [Game Even](#gameeven)
 
         brain-even
+[![asciicast](https://asciinema.org/a/Rk5PmTnzWUgzhoEDTkNh3PYQu.svg)](https://asciinema.org/a/Rk5PmTnzWUgzhoEDTkNh3PYQu)
 *   [Game Calc](#gamecalc)
 
         brain-calc
+[![asciicast](https://asciinema.org/a/qm0eHAUj4rpL5xeT9HBPnnPGp.svg)](https://asciinema.org/a/qm0eHAUj4rpL5xeT9HBPnnPGp)
 *   [Game GCD](#gamegcd)
 
         brain-gcd
+[![asciicast](https://asciinema.org/a/uh9f1YyDbHRlo8kBlj1RtJTdS.svg)](https://asciinema.org/a/uh9f1YyDbHRlo8kBlj1RtJTdS)
 *   [Game Progression](#gameprogression)
 
         brain-progression
+[![asciicast](https://asciinema.org/a/5swbPG7KTuycvqIV6u3Z3KtT1.svg)](https://asciinema.org/a/5swbPG7KTuycvqIV6u3Z3KtT1)
 *   [Game Prime](#gameprime)
 
         brain-prime
-[![asciicast](https://asciinema.org/a/Rk5PmTnzWUgzhoEDTkNh3PYQu.svg)](https://asciinema.org/a/Rk5PmTnzWUgzhoEDTkNh3PYQu)
-
-[![asciicast](https://asciinema.org/a/qm0eHAUj4rpL5xeT9HBPnnPGp.svg)](https://asciinema.org/a/qm0eHAUj4rpL5xeT9HBPnnPGp)
-
-[![asciicast](https://asciinema.org/a/uh9f1YyDbHRlo8kBlj1RtJTdS.svg)](https://asciinema.org/a/uh9f1YyDbHRlo8kBlj1RtJTdS)
-
-[![asciicast](https://asciinema.org/a/5swbPG7KTuycvqIV6u3Z3KtT1.svg)](https://asciinema.org/a/5swbPG7KTuycvqIV6u3Z3KtT1)
-
 [![asciicast](https://asciinema.org/a/zoC3MFP42GvMDcR0r8gPST9sR.svg)](https://asciinema.org/a/zoC3MFP42GvMDcR0r8gPST9sR)
+
+
+
