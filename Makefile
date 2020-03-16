@@ -8,10 +8,6 @@ publish:
 	npm publish --dry-run
 	
 link:
+	npm install
+	npm publish --dry-run
 	sudo npm link
-
-lint:
-	npx eslint .
-	
-asc:
-	asciinema rec
