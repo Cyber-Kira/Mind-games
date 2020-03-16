@@ -11,23 +11,23 @@ To install this project you need:
 ### Now you have access to 5 games.
 
 ### To start each game you need to type starting command, here's the commands:
-*   [Game Even](#gameeven)
+*   [Game Even](https://asciinema.org/a/Rk5PmTnzWUgzhoEDTkNh3PYQu)
 
         brain-even
 [![asciicast](https://asciinema.org/a/Rk5PmTnzWUgzhoEDTkNh3PYQu.svg)](https://asciinema.org/a/Rk5PmTnzWUgzhoEDTkNh3PYQu)
-*   [Game Calc](#gamecalc)
+*   [Game Calc](https://asciinema.org/a/qm0eHAUj4rpL5xeT9HBPnnPGp)
 
         brain-calc
 [![asciicast](https://asciinema.org/a/qm0eHAUj4rpL5xeT9HBPnnPGp.svg)](https://asciinema.org/a/qm0eHAUj4rpL5xeT9HBPnnPGp)
-*   [Game GCD](#gamegcd)
+*   [Game GCD](https://asciinema.org/a/uh9f1YyDbHRlo8kBlj1RtJTdS)
 
         brain-gcd
 [![asciicast](https://asciinema.org/a/uh9f1YyDbHRlo8kBlj1RtJTdS.svg)](https://asciinema.org/a/uh9f1YyDbHRlo8kBlj1RtJTdS)
-*   [Game Progression](#gameprogression)
+*   [Game Progression](https://asciinema.org/a/5swbPG7KTuycvqIV6u3Z3KtT1)
 
         brain-progression
 [![asciicast](https://asciinema.org/a/5swbPG7KTuycvqIV6u3Z3KtT1.svg)](https://asciinema.org/a/5swbPG7KTuycvqIV6u3Z3KtT1)
-*   [Game Prime](#gameprime)
+*   [Game Prime](https://asciinema.org/a/zoC3MFP42GvMDcR0r8gPST9sR)
 
         brain-prime
 [![asciicast](https://asciinema.org/a/zoC3MFP42GvMDcR0r8gPST9sR.svg)](https://asciinema.org/a/zoC3MFP42GvMDcR0r8gPST9sR)
