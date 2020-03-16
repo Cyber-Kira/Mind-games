@@ -1,11 +1,12 @@
-import {
-  cons,
-} from '@hexlet/pairs';
-import { startGame, getRngInt } from '..';
+import { cons } from '@hexlet/pairs';
+import getRngInt from '../utils';
+import startGame from '..';
 
-const descrForGameCalc = 'What is the result of the expression?\n';
+const description = 'What is the result of the expression?';
 
-const getRngSymbol = (string, Begin, End) => string[getRngInt(Begin, End)];
+const signs = '+-*';
+
+const getRngSymbol = (string) => string[getRngInt(0, string.length)];
 
 const getRngOperation = (rngSymbol, rngNum1, rngNum2) => {
   switch (rngSymbol) {
@@ -20,16 +21,15 @@ const getRngOperation = (rngSymbol, rngNum1, rngNum2) => {
   }
 };
 
-const gameData = () => {
-  const syblols = '+-*';
+const getGameData = () => {
   const firstRngNum = getRngInt(0, 10);
   const secondRngNum = getRngInt(0, 10);
-  const rngSym = getRngSymbol(syblols, 0, 3);
+  const rngSym = getRngSymbol(signs);
   const rngExpression = (`${firstRngNum} ${rngSym} ${secondRngNum}`);
   const correctAnswer = getRngOperation(rngSym, firstRngNum, secondRngNum);
-  return cons(rngExpression, correctAnswer);
+  return cons(rngExpression, String(correctAnswer));
 };
 
 export default () => {
-  startGame(gameData, descrForGameCalc);
+  startGame(getGameData, description);
 };

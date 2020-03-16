@@ -3,19 +3,19 @@ import {
   car,
   cdr,
 } from '@hexlet/pairs';
-import { getRngInt, startGame } from '..';
+import getRngInt from '../utils';
+import startGame from '..';
 
 
-const descrForGameProgression = 'What number is missing in the progression?\n';
+const description = 'What number is missing in the progression?';
 
 const createProgression = (firstElem, lastElem, indexOfHiddenElem, step) => {
-  let hiddenNum;
+  const hiddenNum = firstElem + step * (indexOfHiddenElem - 1);
   const iter = (number, counter, acc) => {
     if (counter > lastElem) {
       return cons(acc, hiddenNum);
     }
     if (counter === indexOfHiddenElem) {
-      hiddenNum = number;
       return iter(number + step, counter + 1, `${acc} ..`);
     }
     return iter(number + step, counter + 1, `${acc} ${number}`);
@@ -31,14 +31,14 @@ const getProgression = (progressionLength) => {
   return createProgression(firstNumOfProgr, progressionLength, indexOfHiddenElem, step);
 };
 
-const gameData = () => {
+const getGameData = () => {
   const progressionPair = getProgression(10);
   const progression = car(progressionPair);
   const hiddenElem = cdr(progressionPair);
   const correctAnswer = hiddenElem;
-  return cons(progression, correctAnswer);
+  return cons(progression, String(correctAnswer));
 };
 
 export default () => {
-  startGame(gameData, descrForGameProgression);
+  startGame(getGameData, description);
 };
