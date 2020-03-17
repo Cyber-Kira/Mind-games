@@ -11,3 +11,6 @@ link:
 	npm install
 	npm publish --dry-run
 	sudo npm link
+
+lint:	
+	npx eslint .
