@@ -6,13 +6,6 @@ import {
 
 const greetings = () => console.log('Welcome to the Brain Games!');
 
-const isUserAnswerCorrect = (userAnswer, gameAnswer) => {
-  if (userAnswer === gameAnswer) {
-    return true;
-  }
-  return false;
-};
-
 export default (gameData, description) => {
   const roundsCount = 3;
   greetings();
@@ -26,7 +19,7 @@ export default (gameData, description) => {
     const gameAnswer = cdr(gameQandA);
     console.log(`Question: ${gameQuestion}`);
     const userAnswer = readLineSync.question('Your answer: ');
-    if (isUserAnswerCorrect(userAnswer, gameAnswer)) {
+    if (userAnswer === gameAnswer) {
       console.log('Correct!');
       currentRound += 1;
     } else {

@@ -1,33 +1,31 @@
 import { cons } from '@hexlet/pairs';
-import getRngInt from '../utils';
+import getRandomInt from '../utils';
 import startGame from '..';
 
 const description = 'What is the result of the expression?';
 
-const signs = '+-*';
+const signs = ['+', '-', '*'];
 
-const getRngSymbol = (string) => string[getRngInt(0, string.length)];
-
-const getRngOperation = (rngSymbol, rngNum1, rngNum2) => {
-  switch (rngSymbol) {
+const calculate = (Sign, firstNumber, secondNumber) => {
+  switch (Sign) {
     case '+':
-      return rngNum1 + rngNum2;
+      return firstNumber + secondNumber;
     case '-':
-      return rngNum1 - rngNum2;
+      return firstNumber - secondNumber;
     case '*':
-      return rngNum1 * rngNum2;
+      return firstNumber * secondNumber;
     default:
       return null;
   }
 };
 
 const getGameData = () => {
-  const firstRngNum = getRngInt(0, 10);
-  const secondRngNum = getRngInt(0, 10);
-  const rngSym = getRngSymbol(signs);
-  const rngExpression = (`${firstRngNum} ${rngSym} ${secondRngNum}`);
-  const correctAnswer = getRngOperation(rngSym, firstRngNum, secondRngNum);
-  return cons(rngExpression, String(correctAnswer));
+  const firstNumber = getRandomInt(0, 10);
+  const secondNumber = getRandomInt(0, 10);
+  const Sign = signs[getRandomInt(0, 2)];
+  const question = (`${firstNumber} ${Sign} ${secondNumber}`);
+  const correctAnswer = calculate(Sign, firstNumber, secondNumber);
+  return cons(question, String(correctAnswer));
 };
 
 export default () => {
