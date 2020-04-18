@@ -12,7 +12,7 @@ To install this project you need:
 ![Imgur](https://i.imgur.com/nJ3kUwS.png)
 2.  cd 'directory_name'
 ![Imgur](https://i.imgur.com/RF5a72X.png)
-3.  type 'make link' in terminal
+3.  type 'make install' in terminal to install the project
 ![Imgur](https://i.imgur.com/Nq7Qo2p.png)
 ### Now you have access to 5 games.
 
