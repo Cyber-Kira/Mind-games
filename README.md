@@ -1,4 +1,4 @@
-# Front-End Project
+# Mind games
 
 This [project](https://ru.hexlet.io/professions/frontend/projects/44) is set of games that runs in the console.
 
