@@ -12,7 +12,7 @@ const description = 'What number is missing in the progression?';
 const createQuestion = (firstElement, lastElement, indexOfHiddenElement, step) => {
   const iter = (number, counter, acc) => {
     if (counter > lastElement) {
-      return acc;
+      return acc.trim();
     }
     if (counter === indexOfHiddenElement) {
       return iter(number + step, counter + 1, `${acc} ..`);
@@ -23,20 +23,20 @@ const createQuestion = (firstElement, lastElement, indexOfHiddenElement, step) =
   return iter(firstElement, 1, '');
 };
 
-const getQuestionAndAnswer = (progressionLength) => {
-  const firstElement = getRandomInt(0, 10);
-  const step = getRandomInt(1, 4);
-  const indexOfHiddenElement = getRandomInt(1, progressionLength);
-  const question = createQuestion(firstElement, progressionLength, indexOfHiddenElement, step);
-  const answer = firstElement + step * (indexOfHiddenElement - 1);
+const getQandA = (firstElement, step, index, progressionLength) => {
+  const question = createQuestion(firstElement, progressionLength, index, step);
+  const answer = firstElement + step * (index - 1);
   return cons(question, answer);
 };
 
 const getGameData = () => {
   const progressionLength = 10;
-  const questionAndAnswer = getQuestionAndAnswer(progressionLength);
-  const question = car(questionAndAnswer);
-  const answer = cdr(questionAndAnswer);
+  const firstElement = getRandomInt(0, 10);
+  const step = getRandomInt(1, 4);
+  const indexOfHiddenElement = getRandomInt(1, progressionLength);
+  const QandA = getQandA(firstElement, step, indexOfHiddenElement, progressionLength);
+  const question = car(QandA);
+  const answer = cdr(QandA);
   return cons(question, String(answer));
 };
 
