@@ -8,9 +8,9 @@ const isPrime = (number) => {
   if (number < 2) {
     return false;
   }
-  const limitNumber = Math.floor(Math.sqrt(number));
+  const maxDivider = Math.floor(Math.sqrt(number));
   let index = 2;
-  while (index <= limitNumber) {
+  while (index <= maxDivider) {
     if (number % index === 0) {
       return false;
     }
