@@ -13,7 +13,7 @@ export default (gameData, description) => {
   console.log(`Hello, ${userName}!\n`);
   console.log(`${description}\n`);
 
-  for (let currentRound = 0; currentRound < roundsCount;) {
+  for (let i = 0; i < roundsCount;) {
     const gameQandA = gameData();
     const gameQuestion = car(gameQandA);
     const gameAnswer = cdr(gameQandA);
@@ -21,7 +21,7 @@ export default (gameData, description) => {
     const userAnswer = readLineSync.question('Your answer: ');
     if (userAnswer === gameAnswer) {
       console.log('Correct!');
-      currentRound += 1;
+      i += 1;
     } else {
       console.log(`'${userAnswer}' is wrong answer ;(. Correct answer was '${gameAnswer}'.`);
       console.log(`Let's try again, ${userName}!`);
