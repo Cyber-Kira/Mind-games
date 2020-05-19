@@ -6,7 +6,7 @@ This [project](https://ru.hexlet.io/professions/frontend/projects/44) is set of 
 
 [![Maintainability](https://api.codeclimate.com/v1/badges/f85c3ebdfa0c8021a7db/maintainability)](https://codeclimate.com/github/Cyber-Kira/frontend-project-lvl1/maintainability)
 
-[![Build Status](https://travis-ci.com/Cyber-Kira/frontend-project-lvl1.svg?branch=master)](https://travis-ci.com/Cyber-Kira/frontend-project-lvl1)
+[![Build Status](https://travis-ci.com/Cyber-Kira/Mind-games.svg?branch=master)](https://travis-ci.com/Cyber-Kira/Mind-games)
 
 ## Installation
 
